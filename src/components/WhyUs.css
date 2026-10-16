@@ -1,0 +1,81 @@
+/* ============================================
+   Why Choose Us Section
+   ============================================ */
+
+.why-us__header {
+  max-width: 640px;
+  margin-bottom: var(--space-3xl);
+}
+
+.why-us__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.why-card {
+  background: var(--color-black-card);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all var(--transition-smooth);
+  position: relative;
+}
+
+.why-card:hover {
+  border-color: var(--color-border);
+  transform: translateY(-3px);
+}
+
+.why-card__top {
+  margin-bottom: var(--space-lg);
+}
+
+.why-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: rgba(155, 120, 66, 0.08);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  margin-bottom: var(--space-lg);
+  transition: all var(--transition-base);
+}
+
+.why-card:hover .why-card__icon {
+  border-color: var(--color-gold);
+  background: var(--color-gold);
+  color: var(--color-black);
+}
+
+.why-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-white);
+  margin-bottom: var(--space-sm);
+}
+
+.why-card__desc {
+  font-size: var(--text-sm);
+  color: var(--color-gray);
+  line-height: 1.7;
+}
+
+@media (max-width: 1024px) {
+  .why-us__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .why-us__grid {
+    grid-template-columns: 1fr;
+  }
+}

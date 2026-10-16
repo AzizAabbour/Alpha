@@ -1,0 +1,96 @@
+/* ============================================
+   Founder Section
+   ============================================ */
+
+.founder__card {
+  background: var(--color-black-card);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-xl);
+  padding: var(--space-3xl);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.founder__card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(155, 120, 66, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.founder__avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 2px solid var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(155, 120, 66, 0.1);
+  color: var(--color-gold);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.founder__avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.founder__name {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: var(--space-xs);
+}
+
+.founder__role {
+  font-size: var(--text-sm);
+  color: var(--color-gold);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-md);
+}
+
+.founder__bio {
+  font-size: var(--text-base);
+  color: var(--color-gray);
+  line-height: 1.7;
+  margin-bottom: var(--space-xl);
+  max-width: 680px;
+}
+
+.founder__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .founder__card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: var(--space-xl);
+    gap: var(--space-xl);
+  }
+
+  .founder__avatar {
+    margin: 0 auto;
+  }
+
+  .founder__links {
+    justify-content: center;
+  }
+}

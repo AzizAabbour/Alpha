@@ -1,0 +1,110 @@
+/* ============================================
+   Process / Timeline Section
+   ============================================ */
+
+.process__header {
+  max-width: 600px;
+  margin-bottom: var(--space-4xl);
+}
+
+.process__timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.process__timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 31px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--color-gold) 0%, rgba(155, 120, 66, 0.15) 100%);
+}
+
+.process-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2xl);
+  padding-left: 0;
+}
+
+.process-item__marker {
+  position: relative;
+  z-index: 2;
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-black);
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-gold);
+  transition: all var(--transition-base);
+}
+
+.process-item:hover .process-item__marker {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 15px rgba(155, 120, 66, 0.3);
+  transform: scale(1.05);
+}
+
+.process-item__content {
+  flex: 1;
+  background: var(--color-black-card);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-2xl);
+  transition: all var(--transition-smooth);
+}
+
+.process-item:hover .process-item__content {
+  border-color: var(--color-border);
+  transform: translateX(6px);
+}
+
+.process-item__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-white);
+  margin-bottom: var(--space-xs);
+}
+
+.process-item__desc {
+  font-size: var(--text-sm);
+  color: var(--color-gray);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .process__timeline::before {
+    left: 23px;
+  }
+
+  .process-item {
+    gap: var(--space-md);
+  }
+
+  .process-item__marker {
+    width: 48px;
+    height: 48px;
+    font-size: var(--text-sm);
+  }
+
+  .process-item__content {
+    padding: var(--space-lg);
+  }
+
+  .process-item:hover .process-item__content {
+    transform: none;
+  }
+}

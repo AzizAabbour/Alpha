@@ -1,0 +1,137 @@
+/* ============================================
+   CréoLab-Web — Cinematic SplashScreen
+   ============================================ */
+
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: #08080a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: all;
+}
+
+/* Ambient Backdrops */
+.splash__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.splash__dot-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(155, 120, 66, 0.15) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+}
+
+.splash__glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(155, 120, 66, 0.22) 0%, rgba(212, 168, 92, 0.06) 45%, transparent 70%);
+  filter: blur(80px);
+  animation: splash-glow-pulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes splash-glow-pulse {
+  0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.7; }
+  100% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
+}
+
+/* Center Content Box */
+.splash__content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-xl);
+}
+
+/* Logo Box & Aura */
+.splash__logo-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-lg);
+}
+
+.splash__logo-aura {
+  position: absolute;
+  inset: -15px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(155, 120, 66, 0.4) 0%, rgba(212, 168, 92, 0.1) 60%, transparent 80%);
+  filter: blur(20px);
+  animation: splash-aura-breathe 2s ease-in-out infinite alternate;
+}
+
+@keyframes splash-aura-breathe {
+  0% { transform: scale(0.95); opacity: 0.6; }
+  100% { transform: scale(1.15); opacity: 1; }
+}
+
+.splash__logo {
+  position: relative;
+  z-index: 2;
+  width: 90px;
+  height: auto;
+  filter: drop-shadow(0 8px 24px rgba(155, 120, 66, 0.45));
+}
+
+/* Title */
+.splash__title {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.splash__title-highlight {
+  background: linear-gradient(135deg, #f5dfa8 0%, #b8965a 50%, #9B7842 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Tagline */
+.splash__tagline {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-gold-light);
+  text-transform: uppercase;
+  margin-bottom: var(--space-xl);
+}
+
+/* Gold Loading Bar */
+.splash__loader-track {
+  width: 140px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.splash__loader-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #9B7842 0%, #f5dfa8 50%, #d4a85c 100%);
+  border-radius: 9999px;
+  box-shadow: 0 0 10px rgba(212, 168, 92, 0.8);
+}

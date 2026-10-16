@@ -1,0 +1,130 @@
+/* ============================================
+   ScrollToTop Floating Button
+   ============================================ */
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(14, 14, 18, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(155, 120, 66, 0.35);
+  cursor: pointer;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.6),
+    0 0 15px rgba(155, 120, 66, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  outline: none !important;
+}
+
+.scroll-to-top:focus {
+  outline: none !important;
+}
+
+.scroll-to-top:focus-visible {
+  outline: 2px solid var(--color-gold) !important;
+  outline-offset: 3px;
+}
+
+.scroll-to-top:hover {
+  border-color: var(--color-gold);
+  background: rgba(22, 20, 24, 0.95);
+  box-shadow: 
+    0 14px 35px rgba(0, 0, 0, 0.75),
+    0 0 25px rgba(155, 120, 66, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* SVG Progress Ring */
+.scroll-to-top__progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+  pointer-events: none;
+}
+
+.scroll-to-top__progress-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.05);
+  stroke-width: 2.5;
+}
+
+.scroll-to-top__progress-bar {
+  fill: none;
+  stroke: var(--color-gold);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+/* Center Arrow Icon */
+.scroll-to-top__icon-wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-to-top__icon {
+  color: var(--color-gold-light);
+  transition: all var(--transition-fast);
+}
+
+.scroll-to-top:hover .scroll-to-top__icon {
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .scroll-to-top__progress {
+    width: 44px;
+    height: 44px;
+    viewBox: 0 0 48 48;
+  }
+}
+
+/* Light Mode Overrides */
+[data-theme="light"] .scroll-to-top {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(155, 120, 66, 0.35);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.1),
+    0 0 15px rgba(155, 120, 66, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+[data-theme="light"] .scroll-to-top:hover {
+  background: #ffffff;
+  border-color: var(--color-gold);
+  box-shadow: 
+    0 14px 35px rgba(0, 0, 0, 0.14),
+    0 0 25px rgba(155, 120, 66, 0.3);
+}
+
+[data-theme="light"] .scroll-to-top__progress-bg {
+  stroke: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .scroll-to-top:hover .scroll-to-top__icon {
+  color: var(--color-gold);
+}
+
